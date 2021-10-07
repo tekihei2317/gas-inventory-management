@@ -47,9 +47,21 @@ const setPriceSum = (priceSumList) => {
   });
 };
 
+// 在庫のデータを削除したときに、同じ行の値も削除する
+const clearPriceSum = (rowIndex) => {
+  while (true) {
+    const value = sheet.getRange(rowIndex, CONSUMED_COUNT_COL + 1).getValue();
+    if (value === "") break;
+
+    sheet.getRange(rowIndex, CONSUMED_COUNT_COL + 1).setValue("");
+    rowIndex++;
+  }
+};
+
 const onEdit = () => {
   const lastRowIndex = calcLastRowIndex();
   const stocks = makeStocks(lastRowIndex);
   const priceSumList = calcResult(stocks, lastRowIndex);
   setPriceSum(priceSumList);
+  clearPriceSum(OFFSET_ROW + 1 + priceSumList.length);
 };
