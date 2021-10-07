@@ -1,0 +1,23 @@
+{
+  "name": "gas-inventory-management",
+  "version": "1.0.0",
+  "description": "GASで在庫管理（先入れ先出し法）を実装しました",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tekihei2317/gas-inventory-management.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tekihei2317/gas-inventory-management/issues"
+  },
+  "homepage": "https://github.com/tekihei2317/gas-inventory-management#readme",
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
