@@ -1,6 +1,3 @@
-import calcConsumedPriceSum from "./lib/calcConsumedPriceSum.js";
-
-// データの開始行
 const OFFSET_ROW = 2;
 // データの開始列
 const OFFSET_COL = 1;
@@ -31,7 +28,7 @@ const makeStocks = (lastRowIndex) => {
 };
 
 const calcResult = (stocks, lastRowIndex) => {
-  let consumedCounts = 0;
+  let consumedCounts = [];
 
   for (let i = OFFSET_ROW + 1; i <= lastRowIndex; i++) {
     count = sheet.getRange(i, CONSUMED_COUNT_COL).getValue();
@@ -50,7 +47,7 @@ const setPriceSum = (priceSumList) => {
   });
 };
 
-const main = () => {
+const onEdit = () => {
   const lastRowIndex = calcLastRowIndex();
   const stocks = makeStocks(lastRowIndex);
   const priceSumList = calcResult(stocks, lastRowIndex);

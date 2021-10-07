@@ -26,5 +26,3 @@ const calcConsumedPriceSum = (stocks, consumedCounts) => {
     return consumedPriceSum;
   });
 };
-
-export default calcConsumedPriceSum;
